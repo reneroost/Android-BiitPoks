@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/taaskasutaja_vaade"
+    <data>
+        <variable
+            name="vaateMudel"
+            type="com.bignerdranch.android.learning.reneroost.biitpoks.BiitPoks"/>
+    </data>
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <SeekBar
+            android:id="@+id/kiiruse_slaider"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:max="10"
+            android:progress="5"
+            android:onProgressChanged="@{vaateMudel::onSlaiderMuutunud}"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/taaskasutaja_vaade"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
 </layout>

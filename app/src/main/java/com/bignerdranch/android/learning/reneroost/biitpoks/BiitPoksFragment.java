@@ -38,7 +38,7 @@ public class BiitPoksFragment extends Fragment {
 
         sidumine.taaskasutajaVaade.setLayoutManager(new GridLayoutManager(getActivity(), 3));
         sidumine.taaskasutajaVaade.setAdapter(new HeliAdapter(biitPoks.saaHelid()));
-
+        sidumine.setVaateMudel(biitPoks);
         return sidumine.getRoot();
     }
 

@@ -6,6 +6,7 @@ import android.content.res.AssetManager;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.util.Log;
+import android.widget.SeekBar;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ public class BiitPoks {
     private AssetManager vara;
     private List<Heli> helid = new ArrayList<>();
     private SoundPool heliBassein;
+    private float heliKiirus;
 
     public BiitPoks(Context kontekst) {
         vara = kontekst.getAssets();
@@ -32,7 +34,7 @@ public class BiitPoks {
         if (heliId == null) {
             return;
         }
-        heliBassein.play(heliId, 1.0f, 1.0f, 1, 0, 1.0f);
+        heliBassein.play(heliId, 1.0f, 1.0f, 1, 0, heliKiirus);
     }
 
     public void vabasta() {
@@ -69,6 +71,10 @@ public class BiitPoks {
 
     public List<Heli> saaHelid() {
         return helid;
+    }
+
+    public void onSlaiderMuutunud(SeekBar slaider, int progress, boolean kasutajalt) {
+        heliKiirus = (float) (1.0f + ((float)(progress - 5) / 10));
     }
 
 }
