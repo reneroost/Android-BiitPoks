@@ -1,11 +1,17 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/punane</item>
+        <item name="colorPrimaryDark">@color/tume_punane</item>
+        <item name="colorAccent">@color/hall</item>
+
+        <item name="android:windowBackground">@color/sinine</item>
+        <item name="buttonStyle">@style/BiitPoksNupp</item>
     </style>
 
+    <style name="BiitPoksNupp" parent="Widget.AppCompat.Button">
+        <item name="android:background">@color/tume_sinine</item>
+    </style>
 </resources>
