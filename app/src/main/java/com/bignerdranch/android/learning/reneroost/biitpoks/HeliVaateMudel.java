@@ -5,7 +5,7 @@ import android.databinding.Bindable;
 
 public class HeliVaateMudel extends BaseObservable {
     private Heli heli;
-    private BiitPoks biitPoks;
+    private final BiitPoks biitPoks;
 
     public HeliVaateMudel(BiitPoks biitPoks) {
         this.biitPoks = biitPoks;
@@ -16,9 +16,9 @@ public class HeliVaateMudel extends BaseObservable {
         return heli.saaNimi();
     }
 
-    public Heli saaHeli() {
-        return heli;
-    }
+//    public Heli saaHeli() {
+//        return heli;
+//    }
 
     public void maaraHeli(Heli heli) {
         this.heli = heli;

@@ -14,7 +14,7 @@ public class HeliVaateMudelTest {
     private HeliVaateMudel subjekt;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         biitPoks = mock(BiitPoks.class);
         heli = new Heli("varaTee");
         subjekt = new HeliVaateMudel(biitPoks);

@@ -2,8 +2,8 @@ package com.bignerdranch.android.learning.reneroost.biitpoks;
 
 public class Heli {
 
-    private String failiAadress;
-    private String nimi;
+    private final String failiAadress;
+    private final String nimi;
     private Integer heliId;
 
     public Heli(String varaTee) {

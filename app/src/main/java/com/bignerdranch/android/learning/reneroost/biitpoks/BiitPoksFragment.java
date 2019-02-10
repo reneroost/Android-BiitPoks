@@ -6,7 +6,6 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +14,7 @@ import com.bignerdranch.android.learning.reneroost.biitpoks.databinding.Fragment
 import com.bignerdranch.android.learning.reneroost.biitpoks.databinding.NimekirjaUksusHeliBinding;
 
 import java.util.List;
+import java.util.Objects;
 
 public class BiitPoksFragment extends Fragment {
 
@@ -28,11 +28,11 @@ public class BiitPoksFragment extends Fragment {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
 
-        biitPoks = new BiitPoks(getActivity());
+        biitPoks = new BiitPoks(Objects.requireNonNull(getActivity()));
     }
 
     @Override
-    public View onCreateView(LayoutInflater taispuhuja, ViewGroup konteiner, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater taispuhuja, ViewGroup konteiner, Bundle savedInstanceState) {
         FragmentBiitPoksBinding sidumine = DataBindingUtil.inflate(taispuhuja, R.layout.fragment_biit_poks,
                 konteiner, false);
 
@@ -49,7 +49,7 @@ public class BiitPoksFragment extends Fragment {
     }
 
     private class HeliHoidja extends RecyclerView.ViewHolder {
-        private NimekirjaUksusHeliBinding sidumine;
+        private final NimekirjaUksusHeliBinding sidumine;
 
         private HeliHoidja(NimekirjaUksusHeliBinding sidumine) {
             super(sidumine.getRoot());
@@ -64,7 +64,7 @@ public class BiitPoksFragment extends Fragment {
     }
 
     private class HeliAdapter extends RecyclerView.Adapter<HeliHoidja> {
-        private List<Heli> helid;
+        private final List<Heli> helid;
 
         public HeliAdapter(List<Heli> helid) {
             this.helid = helid;

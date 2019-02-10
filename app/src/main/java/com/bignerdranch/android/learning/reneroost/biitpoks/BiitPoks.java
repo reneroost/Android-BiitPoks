@@ -18,9 +18,9 @@ public class BiitPoks {
     private static final String HELIDE_KAUST = "naite_helid";
     private static final int MAKSIMUM_HELISID = 5;
 
-    private AssetManager vara;
-    private List<Heli> helid = new ArrayList<>();
-    private SoundPool heliBassein;
+    private final AssetManager vara;
+    private final List<Heli> helid = new ArrayList<>();
+    private final SoundPool heliBassein;
     private float heliKiirus;
 
     public BiitPoks(Context kontekst) {
@@ -45,6 +45,7 @@ public class BiitPoks {
         String[] heliNimed;
         try{
             heliNimed = vara.list(HELIDE_KAUST);
+            assert heliNimed != null;
             Log.w(SILT, "Leidsin " + heliNimed.length + " heli");
         } catch (IOException ioe) {
             Log.w(SILT, "Ei suutnud vara kätte saada", ioe);
@@ -74,7 +75,7 @@ public class BiitPoks {
     }
 
     public void onSlaiderMuutunud(SeekBar slaider, int progress, boolean kasutajalt) {
-        heliKiirus = (float) (1.0f + ((float)(progress - 5) / 10));
+        heliKiirus = 1.0f + ((float)(progress - 5) / 10);
     }
 
 }

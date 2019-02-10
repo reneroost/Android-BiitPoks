@@ -9,14 +9,10 @@ public abstract class UheFragmendiActivity extends AppCompatActivity {
 
     protected abstract Fragment looFragment();
 
-    protected int saaPaigutuseResId() {
-        return R.layout.activity_fragment;
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(saaPaigutuseResId());
+        setContentView(R.layout.activity_fragment);
 
         FragmentManager fragmendiHaldur = getSupportFragmentManager();
         Fragment fragment = fragmendiHaldur.findFragmentById(R.id.fragmendi_konteiner);
