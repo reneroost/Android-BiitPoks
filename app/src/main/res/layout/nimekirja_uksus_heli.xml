@@ -7,10 +7,16 @@
             name="vaateMudel"
             type="com.bignerdranch.android.learning.reneroost.biitpoks.HeliVaateMudel"/>
     </data>
-    <Button
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:onClick="@{() -> vaateMudel.onNuppVajutatud()}"
-        android:text="@{vaateMudel.pealkiri}"
-        tools:text="Heli nimi"/>
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:onClick="@{() -> vaateMudel.onNuppVajutatud()}"
+            android:text="@{vaateMudel.pealkiri}"
+            tools:text="Heli nimi"/>
+    </FrameLayout>
 </layout>

@@ -12,6 +12,6 @@
     </style>
 
     <style name="BiitPoksNupp" parent="Widget.AppCompat.Button">
-        <item name="android:background">@color/tume_sinine</item>
+        <item name="android:background">@drawable/nupp_biit_poks</item>
     </style>
 </resources>
