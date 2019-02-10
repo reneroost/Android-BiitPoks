@@ -26,6 +26,8 @@ public class BiitPoksFragment extends Fragment {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRetainInstance(true);
+
         biitPoks = new BiitPoks(getActivity());
     }
 
@@ -40,17 +42,23 @@ public class BiitPoksFragment extends Fragment {
         return sidumine.getRoot();
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        biitPoks.vabasta();
+    }
+
     private class HeliHoidja extends RecyclerView.ViewHolder {
         private NimekirjaUksusHeliBinding sidumine;
 
         private HeliHoidja(NimekirjaUksusHeliBinding sidumine) {
             super(sidumine.getRoot());
             this.sidumine = sidumine;
-            sidumine.setViewModel(new HeliVaateMudel(biitPoks));
+            sidumine.setVaateMudel(new HeliVaateMudel(biitPoks));
         }
 
         public void bind(Heli heli) {
-            sidumine.getViewModel().maaraHeli(heli);
+            sidumine.getVaateMudel().maaraHeli(heli);
             sidumine.executePendingBindings();
         }
     }

@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
-            name="viewModel"
+            name="vaateMudel"
             type="com.bignerdranch.android.learning.reneroost.biitpoks.HeliVaateMudel"/>
     </data>
     <Button
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:text="@{viewModel.pealkiri}"
+        android:onClick="@{() -> vaateMudel.onNuppVajutatud()}"
+        android:text="@{vaateMudel.pealkiri}"
         tools:text="Heli nimi"/>
 </layout>

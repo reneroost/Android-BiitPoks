@@ -4,6 +4,7 @@ public class Heli {
 
     private String failiAadress;
     private String nimi;
+    private Integer heliId;
 
     public Heli(String varaTee) {
         this.failiAadress = varaTee;
@@ -20,4 +21,11 @@ public class Heli {
         return nimi;
     }
 
+    public Integer saaHeliId() {
+        return heliId;
+    }
+
+    public void maaraHeliId(int heliId) {
+        this.heliId = heliId;
+    }
 }

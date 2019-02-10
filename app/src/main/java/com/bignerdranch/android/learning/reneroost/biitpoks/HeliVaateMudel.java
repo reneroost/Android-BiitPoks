@@ -24,4 +24,8 @@ public class HeliVaateMudel extends BaseObservable {
         this.heli = heli;
         notifyChange();
     }
+
+    public void onNuppVajutatud() {
+        biitPoks.mangi(heli);
+    }
 }
